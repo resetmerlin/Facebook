@@ -44,7 +44,7 @@
     font-weight: 700;
     user-select: none;
 }
-
+/*-------------Login----*/
 .forgot__password{
     color: var(--blue-color);
     font-size: 14px;
@@ -72,8 +72,193 @@
 .sign_extra{
     font-size: 15px;
 }
+/*-------------Login----*/
+/*-------------Register----*/
+.login__register{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: var(--bg-primary);
+    box-shadow: 0 1px 2px var(--shadow-1);
+    border-radius: 10px;
+    padding: 0 15px;
+    padding-bottom: 1rem;
+    width: 350px;
+    height: fit-content;
+    color: var(--color-primary);
+}
+.login__register__header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--bg-third);
+}
+.login__register__header i{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
 
+
+.login__register__header-sideTitle{
+    font-size: 15px;
+    color: var(--color-secondary);
+
+}
+.login__register__header-title{
+
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.register__form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register__form__line{
+    padding: 7px 0;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.register__form__col{
+    position: relative;
+    align-self:flex-start;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.register__line__header{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 13px;
+    color: var(--color-secondary);
+}
+.register__line__header i{
+    margin-top: 3px;
+}
+
+.reg_grid{
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: 35px;
+    width: 100%;
+}
+
+.reg_grid label{
+   width: 90px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 16px;
+    color: var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--color-secondary);
+    padding: 0 10px;
+}
+
+
+.reg_grid select{
+    width: 90px;
+    font-size: 16px;
+    color: var(--color-primary);
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reg_infos{
+    font-size: 11px;
+    margin-top: 10px;
+    color: var(--color-secondary);
+}
+.reg_infos span{
+    color: var(--blue-color);
+}
+.reg_btn_wrapper{
+    width: 85%;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup_register__button{
+    height: 33px !important;
+    background-color: #369922;
+}
+/*-------------Register----*/
+
+/*------Footer------------*/
+
+.login__footer{
+    height: 22vh;
+    background: var(--bg-primary);
+    padding: 1.5rem;
+}
+
+.login__footer__wrap{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 3px 10px;
+   font-size: 13px;
+   color: var(--color-secondary);
+   max-width: 350px;
+   margin: 0 auto;
+}
+
+.login__footer__wrap a{ 
+    display: flex;
+    align-items: center;
+ }
+
+ 
+.login__footer__wrap a:hover{ 
+    text-decoration: underline;
+ }
+
+ .footer_square{
+    background: var(--bg-secondary);
+    height: 19px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--bg-third);
+ }
+
+ .footer_square i{
+   transform: scale(0.8);
+   -webkit-filter: invert(40%);
+ }
+ .footer_splitter{
+    width: 100px;
+    height: 1px;
+    background: var(--bg-third);
+    margin: 10px auto;
+    max-width: 900px;
+ }
 /*--------------Media queries ------*/
+
+@media (min-width:539px) {
+    .login__footer__wrap{
+        max-width: 520px;
+    }
+}
+
+@media (min-width:650px) {
+    .login__footer__wrap{
+        max-width: 650px;
+    }
+}
 @media (min-width:850px) {
     .login__wrap{
         display: flex;
@@ -106,6 +291,10 @@
     
         .input_wrap{
             width: 360px !important;
+        }
+
+        .login__footer__wrap{
+            max-width: 900px;
         }
     
 }

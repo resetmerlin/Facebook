@@ -72,3 +72,12 @@
     left: -19.5rem;
     top: -3px;
 }
+
+.error_arrow_left{
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #b94a48;
+    position: absolute;
+    top: 13px;
+    right: -10px;
+}
