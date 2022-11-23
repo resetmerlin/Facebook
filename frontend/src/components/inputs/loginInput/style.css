@@ -37,7 +37,14 @@
     transform: scale(0.8);
 }
 
+@media (max-width: 539px){
 
+
+    .input__wrap i {
+        right: 15px !important;
+
+    }
+}
 .input__wrap__error{
     position: relative;
     padding: 15px 10px;

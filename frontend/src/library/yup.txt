@@ -1,0 +1,4 @@
+ You can pair Formik with validation libraries like Yup to make the process even simpler
+
+ Yup schemas fulfill several roles as it pertains to the application data. Not only is it performing validation for the form itself (in the React hook form hook configuration), 
+ but also to cast data into a usable form in the reducer to then perform manipulation/calculations upon.

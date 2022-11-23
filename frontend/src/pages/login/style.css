@@ -131,6 +131,7 @@
     align-self:flex-start;
     margin-bottom: 10px;
     padding: 0 10px;
+    width: 100%;
 }
 .register__line__header{
     display: flex;
@@ -246,12 +247,35 @@
     margin: 10px auto;
     max-width: 900px;
  }
+ /*--------------Footer--------*/
+
+  /*------------dob and gender errors--------*/
+.reg_grid .input__wrap__error{
+    width: 300px;
+    position: absolute;
+    top: 70px;
+}
+  
+  /*------------dob and gender errors--------*/
+
 /*--------------Media queries ------*/
 
 @media (min-width:539px) {
     .login__footer__wrap{
         max-width: 520px;
     }
+    .register{
+        width: 400px;
+    }
+    .register__form__line{
+        flex-direction: row;
+        width: 100%;
+    }
+    .reg_grid select,
+    .reg_grid label{
+        width: 90px;
+    }
+    
 }
 
 @media (min-width:650px) {

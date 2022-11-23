@@ -1,0 +1,25 @@
+useState() is when data changes re-render the UI
+데이터는
+1. 변수에 넣을 수 있고
+2. state에 넣을 수도 있당
+만약: useState(`그냥 ex임`); 이렇게 쓰면 array가 남는데 [a,b] 라는 array가 남는다.
+첫번째 [a]는 이 '그냥 ex임'이라는 데이터가 저장됨, [b]는 이 데이터를 수정하기 위한
+함수를 생성해 준다.
+
+그래서 보통 let [내가 타이핑한거, 수정하기] = useState(`그냥 ex임`);
+그래서 보통 let [내가 타이핑한거2, 수정하기2] = useState(`그냥 ex임2`);
+
+뭐 그래서 간단히 말하자면 변수 대신 쓰는 데이터 저장공간이라고 할 수 있다.
+
+state에 데이터를 저장하는 이유는 state는 변경되면 HTML이 자동으로 재렌더링 된다...
+즉 HTML이 새로고침 없이도 겁나게 스무스하게 변경됨\
+
+
+state 변경하는 방법은 일단 변수 새로 설정해 주고 그 첫 [a]를 새로운 변수에 넣는다.
+: var newArrau = [...내가 타이핑한거];
+    //spread operator
+    
+  newArrau[0] = `그냥 그냥 ex일까요??`;
+  수정하기(newArrau);
+
+  이러면 바뀐다ㅏㅏㅏㅏㅏ.

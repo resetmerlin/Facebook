@@ -3,65 +3,66 @@ import { useMediaQuery } from "react-responsive";
 
 export default function RegisterInput({ placeholder, bottom, ...props }) {
   const [field, meta] = useField(props);
-  const desktopView = useMediaQuery({
+  const view1 = useMediaQuery({
+    query: "(min-width: 539px)",
+  });
+  const view2 = useMediaQuery({
     query: "(min-width: 850px)",
   });
-  console.log(desktopView);
-  return (
-    <div className="input__wrap">
-      {meta.touched && meta.error && !bottom && (
-        <div
-          className={
-            desktopView
-              ? "input__wrap__error input_error_desktop"
-              : "input__wrap__error"
-          }
-          style={{ transform: "translateY(3px)" }}
-        >
-          {meta.touched && meta.error && <ErrorMessage name={field.name} />}
-          {meta.touched && meta.error && (
-            <div
-              className={desktopView ? "error_arrow_left" : "error_arrow_top"}
-            ></div>
-          )}
-        </div>
-      )}
+  const view3 = useMediaQuery({
+    query: "(min-width: 1170px)",
+  });
+  console.log(view2);
 
+  const test1 = view3 && field.name === `first_name`;
+  const test2 = view3 && field.name === `last_name`;
+  return (
+    <div className="input__wrap register_input_wrap">
       <input
         className={meta.touched && meta.error ? "input_error_border" : ""}
+        style={{
+          width: `${
+            view1 && (field.name === `first_name` || field.name === `last_name`)
+              ? `100%`
+              : view1 && (field.name === "email" || field.name === "password")
+              ? "326px"
+              : "300px"
+          }`,
+        }}
         type={field.type}
         name={field.name}
         placeholder={placeholder}
         {...field}
         {...props}
       ></input>
-      {meta.touched && meta.error && bottom && (
+      {meta.touched && meta.error && (
         <div
           className={
-            desktopView
+            view3
               ? "input__wrap__error input_error_desktop"
               : "input__wrap__error"
           }
-          style={{ transform: "translateY(2px)" }}
+          style={{
+            transform: "translateY(2px)",
+            left: `${test1 ? `-200%` : test2 ? `107%` : ""}`,
+          }}
         >
           {meta.touched && meta.error && <ErrorMessage name={field.name} />}
           {meta.touched && meta.error && (
             <div
               className={
-                desktopView ? "error_arrow_left" : "error_arrow_bottom"
+                view3 && field.name !== `last_name`
+                  ? `error_arrow_left`
+                  : view3 && field.name === `last_name`
+                  ? "error_arrow_right"
+                  : !view3 && "error_arrow_bottom"
+                //when the view3 is right and also field name is last name, then
               }
             ></div>
           )}
         </div>
       )}
-      {meta.touched && meta.error && (
-        <i
-          className="error_icon"
-          style={{
-            top: `${!bottom && !desktopView ? "64%" : "15px"} `,
-          }}
-        ></i>
-      )}
+      {meta.touched && meta.error && <i className="error_icon"></i>}
     </div>
   );
 }
